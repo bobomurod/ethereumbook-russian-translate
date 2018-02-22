@@ -4,6 +4,8 @@
 
 <hr/>
 
+# Перевод на русский сделан на 1%
+
 # Mastering Ethereum
 
 Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains.
