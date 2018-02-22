@@ -6,7 +6,7 @@
 
 - Телеграм канал для получения уведомлений по переводу - [ProtocolX](http://t.me/protocolx)
 
-- ETH адрес для поддержки этого перевода: [0x0071a7250ba11e086b0de4afc6e0264061d8c941](https://etherscan.io/address/0x0071a7250ba11e086b0de4afc6e0264061)
+- ETH адрес для поддержки этого перевода: [0x0071a7250ba11e086b0de4afc6e0264061d8c941](https://etherscan.io/address/0x0071a7250ba11e086b0de4afc6e0264061d8c941)
 
 - Не забудьте занести свои ETH и авторам самой книги
 
