@@ -1,0 +1,32 @@
+[Consensus]
+
+== Что такое консенсус
+
+=== Что такое POW
+
+=== Что такое POS
+
+=== Что такое DPOS (optional)
+
+== Консенсус в Ethereum
+
+=== Введение в Ethash
+
+==== Seed, Cache, Data Generation
+
+==== Функции POW 
+
+==== Why GPU Does Matter ?
+
+
+=== Introduction Of Casper 
+
+==== POS
+
+==== Slash Protocol
+
+
+
+
+
+
