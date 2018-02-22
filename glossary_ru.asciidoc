@@ -1,5 +1,5 @@
 [preface]
-== Quick Glossary
+== Краткий глоссарий
 
 This quick glossary contains many of the terms used in relation to Ethereum. These terms are used throughout the book, so bookmark this for a quick reference.
 
@@ -23,10 +23,10 @@ Account::
 BIP::
     Bitcoin Improvement Proposals.  A set of proposals that members of the bitcoin community have submitted to improve bitcoin. For example, BIP-21 is a proposal to improve the bitcoin uniform resource identifier (URI) scheme.
 
-Block:: 
+Блок:: 
     A block is added to the Ethereum network by miners and is a collection of required information(block header) about the comprised transactions, and a set of other block headers known as ommers.
 
-blockchain::
+блокчейн::
 	A list of blocks validated by the proof-of-work system, each linking to its predecessor all the way to the genesis block. This varies from the Bitcoin protocol's in that it does not have a block limit, it instead uses varying gas limits.
 
 block limit::
@@ -38,11 +38,11 @@ contract account::
     An account containing code that executes whenever it receives a transaction from another account (EOA or contract).
 
 // Should this just say "most nodes"?
-consensus::
+консенсус::
     When several nodes, usually most nodes on the network, all have the same blocks in their locally-validated best block chain.
     Not to be confused with consensus rules.
 
-consensus rules::
+правила консенсуса::
     The block validation rules that full nodes follow to stay in consensus with other nodes. Not to be confused with consensus.
 
 contract creation transaction::
