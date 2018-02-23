@@ -1,14 +1,16 @@
 ![Mastering Ethereum Cover](images/cover_thumb.png)
 
 [![Gitter](https://github.com/ethereumbook/ethereumbook/blob/develop/images/chat-on-gitter.svg)](https://gitter.im/ethereumbook/Lobby)
+Телеграм группа для тематического общения - [TechGarageRu](https://t.me/techgarageru)
+Телеграм канал для получения уведомлений по переводу - [ProtocolX](http://t.me/protocolx)
 
 <hr/>
 
 # Mastering Ethereum
 
-Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains.
+Mastering Ethereum это книга для разработчиков, предлагающее руководство по взаимодействию и использованию сетей Ethereum, Ethereum Classic, RootStock (RSK) и других совместимых, основаных на EVM открытых блокчейнах.
 
-This repository contains the draft of the book, currently in progress, scheduled for publication in Q4'2018 by O'Reilly Media. The publication date has been delayed, unfortunately, due to some personal issues. Expect to see content developed and pushed here in Q1 and Q2 2018.
+Этот репозиторий содержит перевод драфта книги, которая сейчас разрабатывается и планируемая к выходу в 4-ом квартале 2018 года в O'Reilly Media. К сожалению дата публикации была отложена из-за некоторых личных проблем. В данном репозитории вы сможете отслеживать развитие и доработку основного контента книги.
 
 # Содержание
 
@@ -16,41 +18,41 @@ The current status of the book is "outline". Chapters are not clearly defined or
 
 Note: the order or structure of these snippets is in constant flux.
 
-Here's what is available now:
+Здесь то что сейчас доступно:
 
 | Секция | Прогрес | Перевод |
 |-------|------|------|
 | [Preface](preface_ru.asciidoc) | ### | нет |
 | [Глосарий](glossary_ru.asciidoc) | ### | нет |
 | [Что такое Ethereum](what-is_ru.asciidoc) | ## | нет |
-| [Introduction](intro_ru.asciidoc) | ############# | нет |
+| [Введение](intro_ru.asciidoc) | ############# | нет |
 | [Ethereum Clients](clients_ru.asciidoc) | ###### | нет |
 | [Ethereum Testnets](ethereum-testnets_ru.asciidoc) | # | нет |
 | [Keys and Addresses](keys-addresses_ru.asciidoc) | ############# | нет |
-| [Wallets](wallets_ru.asciidoc) | ########### | нет |
-| [Transactions](transactions_ru.asciidoc) | # | нет |
-| [Smart Contracts](smart-contracts_ru.asciidoc) | # | нет |
-| [Tokens](tokens_ru.asciidoc) | ############ | нет |
+| [Кошельки](wallets_ru.asciidoc) | ########### | нет |
+| [Транзакции](transactions_ru.asciidoc) | # | нет |
+| [Смарт контракты](smart-contracts_ru.asciidoc) | # | нет |
+| [ТОкены](tokens_ru.asciidoc) | ############ | нет |
 | [Accounting & Gas](gas_ru.asciidoc) | # | нет |
 | [EVM](evm_ru.asciidoc) | # | нет |
-| [Consensus](consensus_ru.asciidoc) | # | нет |
+| [Консенсус](consensus_ru.asciidoc) | # | нет |
 | [DevP2P Protocol](devp2p-protocol_ru.asciidoc) | ## | нет |
 | [Dev Tools and Frameworks](dev-tools_ru.asciidoc) | ##### | нет |
 | [Dapps](dapps_ru.asciidoc) | # | нет |
-| [Ethereum Standards (EIPs/ERCs)](standards-eip-erc_ru.asciidoc) | ## | нет |
+| [Стандарты Ethereum (EIPs/ERCs)](standards-eip-erc_ru.asciidoc) | ## | нет |
 
-Jump in! Review, comment, suggest and contribute...
+Вперед! Рецензируйте, комментируйте, предлагайте и содействуйте...
 
-# Contributing, reviewing and commenting
+# Содействие, рецензирование и комментарии
 
-This book is developed collaboratively and openly, here on Github. We accept comments, contributions and corrections from all.
+Мы эту книгу делаем сообща и открыто, здесь, на GitHub. Мы принимаем от всех комментарии, содействие развитию, коррекции.
 
 Для общения с авторами и редакторами используйте Gitter (англоязычный):
 
 
 [![Gitter](https://github.com/ethereumbook/ethereumbook/blob/develop/images/chat-on-gitter.svg)](https://gitter.im/ethereumbook/Lobby)
 
-To contribute, see the detailed [Contributing Guide](CONTRIBUTE.md).
+Для поддержки развития смотрите документ: [Contributing Guide](CONTRIBUTE_ru.md).
 
 # Исходники & Лицензия
 
