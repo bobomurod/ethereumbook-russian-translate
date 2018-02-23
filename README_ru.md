@@ -10,7 +10,7 @@ Mastering Ethereum is a book for developers, offering a guide to the operation a
 
 This repository contains the draft of the book, currently in progress, scheduled for publication in Q4'2018 by O'Reilly Media. The publication date has been delayed, unfortunately, due to some personal issues. Expect to see content developed and pushed here in Q1 and Q2 2018.
 
-# Contents
+# Содержание
 
 The current status of the book is "outline". Chapters are not clearly defined or organized yet. Snippets and outlines of various topics are being developed and comments are very welcome!
 
@@ -18,26 +18,26 @@ Note: the order or structure of these snippets is in constant flux.
 
 Here's what is available now:
 
-| Section | Progress |
+| Секция | Прогрес | Перевод |
 |-------|------|
-| [Preface](preface.asciidoc) | ### |
-| [Глоссарий](glossary_ru.asciidoc) | ### |
-| [What is Ethereum](what-is.asciidoc) | ## |
-| [Introduction](intro.asciidoc) | ############# |
-| [Ethereum Clients](clients.asciidoc) | ###### |
-| [Ethereum Testnets](ethereum-testnets.asciidoc) | # |
-| [Keys and Addresses](keys-addresses.asciidoc) | ############# |
-| [Wallets](wallets.asciidoc) | ########### |
-| [Transactions](transactions.asciidoc) | # |
-| [Smart Contracts](smart-contracts.asciidoc) | # |
-| [Tokens](tokens.asciidoc) | ############ |
-| [Accounting & Gas](gas.asciidoc) | # |
-| [EVM](evm.asciidoc) | # |
-| [Consensus](consensus.asciidoc) | # |
-| [DevP2P Protocol](devp2p-protocol.asciidoc) | ## |
-| [Dev Tools and Frameworks](dev-tools.asciidoc) | ##### |
-| [Dapps](dapps.asciidoc) | # |
-| [Ethereum Standards (EIPs/ERCs)](standards-eip-erc.asciidoc) | ## |
+| [Preface](preface_ru.asciidoc) | ### | [x] |
+| [Глосарий](glossary_ru.asciidoc) | ### | [x] |
+| [Что такое Ethereum](what-is_ru.asciidoc) | ## | [x] |
+| [Introduction](intro_ru.asciidoc) | ############# | [x] |
+| [Ethereum Clients](clients_ru.asciidoc) | ###### | [x] |
+| [Ethereum Testnets](ethereum-testnets_ru.asciidoc) | # | [x] |
+| [Keys and Addresses](keys-addresses_ru.asciidoc) | ############# | [x] |
+| [Wallets](wallets_ru.asciidoc) | ########### | [x] |
+| [Transactions](transactions_ru.asciidoc) | # | [x] |
+| [Smart Contracts](smart-contracts_ru.asciidoc) | # | [x] |
+| [Tokens](tokens_ru.asciidoc) | ############ | [x] |
+| [Accounting & Gas](gas_ru.asciidoc) | # | [x] |
+| [EVM](evm_ru.asciidoc) | # | [x] |
+| [Consensus](consensus_ru.asciidoc) | # | [x] |
+| [DevP2P Protocol](devp2p-protocol_ru.asciidoc) | ## | [x] |
+| [Dev Tools and Frameworks](dev-tools_ru.asciidoc) | ##### | [x] |
+| [Dapps](dapps_ru.asciidoc) | # | [x] |
+| [Ethereum Standards (EIPs/ERCs)](standards-eip-erc_ru.asciidoc) | ## | [x] |
 
 Jump in! Review, comment, suggest and contribute...
 
@@ -45,14 +45,14 @@ Jump in! Review, comment, suggest and contribute...
 
 This book is developed collaboratively and openly, here on Github. We accept comments, contributions and corrections from all.
 
-To chat with the authors and editors:
+Для общения с авторами и редакторами используйте Gitter (англоязычный):
 
 
 [![Gitter](https://github.com/ethereumbook/ethereumbook/blob/develop/images/chat-on-gitter.svg)](https://gitter.im/ethereumbook/Lobby)
 
 To contribute, see the detailed [Contributing Guide](CONTRIBUTE.md).
 
-# Source & License
+# Исходники & Лицензия
 
 The book's source code, found in this repository, is kept synchronized with the print and ebook editions.
 
