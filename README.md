@@ -20,24 +20,24 @@ Here's what is available now:
 
 | Секция | Прогрес | Перевод |
 |-------|------|------|
-| [Preface](preface_ru.asciidoc) | ### | [x] |
-| [Глосарий](glossary_ru.asciidoc) | ### | [x] |
-| [Что такое Ethereum](what-is_ru.asciidoc) | ## | [x] |
-| [Introduction](intro_ru.asciidoc) | ############# | [x] |
-| [Ethereum Clients](clients_ru.asciidoc) | ###### | [x] |
-| [Ethereum Testnets](ethereum-testnets_ru.asciidoc) | # | [x] |
-| [Keys and Addresses](keys-addresses_ru.asciidoc) | ############# | [x] |
-| [Wallets](wallets_ru.asciidoc) | ########### | [x] |
-| [Transactions](transactions_ru.asciidoc) | # | [x] |
-| [Smart Contracts](smart-contracts_ru.asciidoc) | # | [x] |
-| [Tokens](tokens_ru.asciidoc) | ############ | [x] |
-| [Accounting & Gas](gas_ru.asciidoc) | # | [x] |
-| [EVM](evm_ru.asciidoc) | # | [x] |
-| [Consensus](consensus_ru.asciidoc) | # | [x] |
-| [DevP2P Protocol](devp2p-protocol_ru.asciidoc) | ## | [x] |
-| [Dev Tools and Frameworks](dev-tools_ru.asciidoc) | ##### | [x] |
-| [Dapps](dapps_ru.asciidoc) | # | [x] |
-| [Ethereum Standards (EIPs/ERCs)](standards-eip-erc_ru.asciidoc) | ## | [x] |
+| [Preface](preface_ru.asciidoc) | ### | нет |
+| [Глосарий](glossary_ru.asciidoc) | ### | нет |
+| [Что такое Ethereum](what-is_ru.asciidoc) | ## | нет |
+| [Introduction](intro_ru.asciidoc) | ############# | нет |
+| [Ethereum Clients](clients_ru.asciidoc) | ###### | нет |
+| [Ethereum Testnets](ethereum-testnets_ru.asciidoc) | # | нет |
+| [Keys and Addresses](keys-addresses_ru.asciidoc) | ############# | нет |
+| [Wallets](wallets_ru.asciidoc) | ########### | нет |
+| [Transactions](transactions_ru.asciidoc) | # | нет |
+| [Smart Contracts](smart-contracts_ru.asciidoc) | # | нет |
+| [Tokens](tokens_ru.asciidoc) | ############ | нет |
+| [Accounting & Gas](gas_ru.asciidoc) | # | нет |
+| [EVM](evm_ru.asciidoc) | # | нет |
+| [Consensus](consensus_ru.asciidoc) | # | нет |
+| [DevP2P Protocol](devp2p-protocol_ru.asciidoc) | ## | нет |
+| [Dev Tools and Frameworks](dev-tools_ru.asciidoc) | ##### | нет |
+| [Dapps](dapps_ru.asciidoc) | # | нет |
+| [Ethereum Standards (EIPs/ERCs)](standards-eip-erc_ru.asciidoc) | ## | нет |
 
 Jump in! Review, comment, suggest and contribute...
 
