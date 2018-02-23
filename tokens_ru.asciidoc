@@ -1,0 +1,604 @@
+== Tokens
+
+=== What are tokens?
+
+The word _token_ derives from the Old English "tacen" meaning a sign or symbol. Commonly used to mean privately-issued coin-like items that have insignificant value, as used in transportation tokens, laundry tokens, arcade tokens.
+
+Nowadays, tokens based on blockchains are redefining the word to mean blockchain-based abstractions that can be owned and that represent assets, currency, or access rights.
+
+The association between the word "token" and insignificant value has a lot to do with the limited use of physical tokens. Often restricted to specific businesses, organizations or locations, physical tokens are not easily exchangeable and cannot be used for more than one function. With blockchain tokens, these restrictions are erased. Many of these tokens serve multiple purposes, globally and can be traded for each other or for other currencies in global liquid markets. With those restrictions gone, the "insignificant value" expectation is also a thing of the past.
+
+In this section we look at various uses for tokens and how they are created. We also discuss attributes of tokens such as fungibility and intrinsicality. Finally, we examine the standards and technologies that they are based on and experiment by building our own tokens.
+
+=== How are tokens used?
+
+The most obvious use of tokens is as digital private currencies. However, this is only one possible use. Tokens can be programmed to serve many different functions, often overlapping. For example, a token can simultaneously convey a voting right, an access right and ownership of a resource. Currency is just the first "app".
+
+Currency:: A token can serve as a form of currency, with a value determined through private trade. For example, ether or bitcoin.
+
+Resource:: A token can represent a resource earned or produced in a sharing-economy or resource-sharing environment. For example, a storage or CPU token representing resources that can be shared over a network.
+
+Asset:: A token can represent ownership of an intrinsic or extrinsic, tangible or intangible asset. For example, gold, real-estate, a car, oil, energy etc.
+
+Access:: A token can represent access rights and even convey access to a digital or physical property, such as a discussion forum, an exclusive website, a hotel room, a rental car.
+
+Equity:: A token can represent shareholder equity in a digital organization (e.g. a DAO) or legal fiction (e.g. a corporation)
+
+Voting:: A token can represent voting rights in a digital or legal system.
+
+Collectible:: A token can represent a digital (e.g. CryptoPunks) or physical collectible (e.g. a painting)
+
+Identity:: A token can represent a digital (e.g. avatar) or legal identity (e.g. national ID).
+
+Attestation:: A token can represent a certification or attestation of fact by some authority or by a decentralized reputation system.
+
+Often, a single token has several of these functions overlapping. In some cases it is hard to discern between them, as the physical equivalents have always been inextricably linked. For example, in the physical world, a driver's license (attestation) is also an identity document (identity) and the two cannot be separated. In the digital realm, previously commingled functions can be separated and developed independently (e.g. an anonymous attestation).
+
+=== Tokens and fungibility
+
+From Wikipedia:
+
+ In economics, fungibility is the property of a good or a commodity whose individual units are essentially interchangeable.
+
+Tokens are fungible when we can substitute any single unit of the token for another without any difference in its value or function. For example, ether is a fungible token, as any unit of ether has the same value and use as any other unit of ether.
+
+Strictly speaking, if a token's historical provenance can be tracked, then it is not entirely fungible. The ability to track provenance can lead to blacklisting and whitelisting, reducing or eliminating fungibility. We will examine this further in <<privacy>>.
+
+Non-fungible tokens are tokens that each represent a unique tangible or intangible item and therefore are not interchangeable. For example, a token that represents ownership of a _specific_ Van Gogh painting is not equivalent to another token that represents a Picasso. Similarly, a token representing a _specific_ digital collectible such as a specific CryptoKitty (see <<cryptoKitties>>) is not interchangeable with any other CryptoKitty.
+
+We will see examples of both fungible and non-fungible tokens later in this section.
+
+=== Counterparty risk
+
+Counterparty risk is the risk that the _other_ party in a transaction will fail to meet their obligations. Some types of transactions create additional counterparty risks because of the addition of more than two parties in the transaction. For example, if you hold a certificate of deposit for a precious metal and you sell that to someone, there are at least 3 parties in that transaction: the seller, the buyer and the custodian of the precious metal. Someone holds the physical asset and by necessity they become a party to, and add counterparty risk, to any transaction involving that asset. When any asset is traded indirectly through the exchange of a token of ownership, there is additional counterparty risk from the custodian of the asset. Do they have the asset? Will they recognize (or allow) the transfer of ownership based on the transfer of a token (such as a certificate, deed, title or digital token). In the world of digital tokens, it is important to understand who holds the asset that is represented by the token and what rules apply to that underlying asset.
+
+=== Tokens and intrinsicality
+
+The word "intrinsic" derives from the Latin "intra", meaning "from within".
+
+Some tokens represent digital items that are _intrinsic_ to the blockchain. Those digital assets are governed by consensus rules, just like the tokens themselves. This has an important implication: tokens that represent intrinsic assets do not carry additional counterparty risk. If you hold the keys to 1 ether, there is no other party holding that ether for you. The blockchain consensus rules apply and your ownership (control) of the private keys is equivalent to ownership of the asset, without any intermediary.
+
+Conversely, many tokens are used to represent _extrinsic_ things, like real-estate, corporate voting shares, trademarks, gold bars. The ownership of these items, which are not "within" the blockchain are governed by law, custom and policy that are separate from the consensus rules that govern the token. As a result, these extrinsic assets carry additional counterparty risk because they are held by custodians, recorded in external registries, or controlled by laws and policies outside the blockchain environment.
+
+One of the most important ramifications of blockchain-based tokens is the ability to replace extrinsic assets into intrinsic assets and thereby remove counterparty risk. A good example is moving from equity in a corporation (extrinsic) to a equity or voting token in a _decentralized autonomous organization_ or similar (intrinsic) organization.
+
+=== Token Standards
+
+Blockchain tokens have existed before Ethereum. In some ways, the first blockchain currency, bitcoin, is a token itself. Many token platform were also developed on bitcoin and other cryptocurrencies before Ethereum. However, the introduction of the first token standard on Ethereum led to an explosion of tokens.
+
+Vitalik Buterin suggested tokens as one of the most obvious and useful applications of a generalized programmable blockchain such as Ethereum. In fact, in the first year of Ethereum it was common to see Vitalik and others wearing t-shirts emblazoned with the Ethereum logo and a smart contract sample on the back. There were several variations of this t-shirt, but the most common showed an implementation of a token.
+
+==== ERC20 Token Standard
+
+The first standard was introduced in November 2015 by Fabian Vogelsteller, as an Ethereum Request for Comments (ERC). It was automatically assigned GitHub issue number 20, giving rise to the name "ERC20 token". The vast majority of tokens are currently based on ERC20. The ERC20 request for comments, eventually became Ethereum Improvement Proposal EIP20, but is mostly still referred to by the original name ERC20. You can read the standard here:
+
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
+
+ERC20 is a standard for _fungible tokens_ meaning that different units of an ERC20 token are interchangeable and have no unique properties.
+
+The ERC20 standard defines a common interface for contracts implementing a token, such that any compatible token can be accessed and used in the same way. The interface consists of a number of functions that must be present in every implementation of the standard, as well as some optional functions and attributes that may be added by developers.
+
+===== ERC20 required functions & events
+
+totalSupply:: Returns the total units of this token that currently exist. ERC20 tokens can have fixed or variable supply.
+
+balanceOf:: Given an address, returns the token balance of that address.
+
+transfer:: Given an address and amount, transfers that amount of tokens to that address, from the balance of the address that executed the transfer.
+
+transferFrom:: Given a sender, recipient and amount, transfers tokens from one account to another. Used in combination with +approve+ below.
+
+approve:: Given a recipient address and amount, authorizes that address to execute several transfers up to that amount, from the account that issued the approval.
+
+allowance:: Given an owner address and a spender address, returns the remaining amount that the spender is approved to withdraw from the owner.
+
+Transfer event:: Event triggered upon successful transfer (call to +transfer+ or +transferFrom+) (even for zero value transfers).
+
+Approval event:: Event logged upon successful call to +approve+.
+
+===== ERC20 optional functions
+
+name:: Returns a human readable name (e.g. "US Dollars") of the token.
+
+symbol:: Returns a human readable symbol (e.g. "USD") for the token.
+
+decimals:: Returns the number of decimals used to divide token amounts. For example, if decimals is 2, then the token amount is divided by 100 to get its user representation.
+
+===== The ERC20 interface defined in Solidity
+
+Here's what an ERC20 interface specification looks like in Solidity:
+
+----
+contract ERC20 {
+   function totalSupply() constant returns (uint theTotalSupply);
+   function balanceOf(address _owner) constant returns (uint balance);
+   function transfer(address _to, uint _value) returns (bool success);
+   function transferFrom(address _from, address _to, uint _value) returns (bool success);
+   function approve(address _spender, uint _value) returns (bool success);
+   function allowance(address _owner, address _spender) constant returns (uint remaining);
+   event Transfer(address indexed _from, address indexed _to, uint _value);
+   event Approval(address indexed _owner, address indexed _spender, uint _value);
+}
+----
+
+===== ERC20 workflows: "transfer" and "approve & transferFrom"
+
+The ERC20 token standard has two transfer functions. You might be wondering why?
+
+ERC20 allows two different workflows. The first is a single-transaction, straightforward workflow using the +transfer+ function. This workflow is the one used by wallets to send tokens to other wallets. The vast majority of token transactions happen with the +transfer+ workflow.
+
+Executing the transfer contract is very simple. If Alice wants to send an 10 tokens to Bob, her wallet sends a transaction to the token contract's address, calling the +transfer+ function with Bob's address and "10" as the arguments. The token contract adjusts Alice's balance (-10) and Bob's balance (+10) and issues a +Transfer+ event.
+
+The second workflow is a two-transaction workflow that uses +approve+, followed by +transferFrom+. This workflow allows a token owner to delegate their control to another address. It is most often used to delegate control to a contract for distribution of tokens, but it can also be used by exchanges. For example, if a company is selling tokens for an ICO, they can +approve+ a crowdsale contract address to distribute a certain amount of tokens. The crowdsale contract can then +transferFrom+ the token contract owner balance to each buyer of the token.
+
+[[approve_transferFrom_workflow]]
+.The two-step approve & transferFrom workflow of ERC20 tokens
+image::images/approve_transferFrom_workflow.png["The two-step approve & transferFrom workflow of ERC20 tokens"]
+
+For the +approve & transferFrom+ workflow, two transactions are needed. Let's say that Alice wants to allow the AliceICO contract to sell 50% of all the AliceCoin tokens to buyers like Bob and Charlie. First, Alice launches the AliceCoin ERC20 contract, issuing all the AliceCoin to her own address. Then, Alice launches the AliceICO contract that can sell tokens for ether. Next, Alice initiates the +approve & transferFrom+ workflow. She sends a transaction to AliceCoin, calling +approve+, with the address of AliceICO and 50% of the +totalSupply+. This will trigger the +Approval+ event. Now, the AliceICO contract can sell AliceCoin. When AliceICO receives ether from Bob, it needs to send some AliceCoin to Bob in return. To do that, AliceICO calls the AliceCoin +transferFrom+ function, with Alice's address as the sender, Bob's address as the recipient and the amount of tokens to give Bob. The AliceCoin contract transfers the balance from Alice's address to Bobk's address and triggers a +Transfer+ event. The AliceICO contract can call +transferFrom+ an unlimited number of times, as long as it doesn't exceed the approval limit Alice set. The AliceICO contract can keep track of how many AliceCoin tokens it can sell by calling the +allowance+ function.
+
+===== ERC20 Implementations
+
+While it is possible to implement an ERC20-compatible token in about thirty lines of Solidity code, most implementations are more complex, to account for potential security vulnerabilities. There are two implementations mentioned in the EIP20 standard:
+
+Consensys EIP20:: A simple and easy to read implementation of an ERC20-compatible token.
+
+You can read the Solidity code for Consensys' implementation here:
+https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol
+
+OpenZeppelin StandardToken:: This implementation is ERC20-compatible, with additional security precautions. It forms the basis of OpenZeppelin libraries implementing more complex ERC20-compatible tokens with fundraising caps, auctions, vesting schedules and other features.
+
+You can see the Solidity code for OpenZeppelin StandardToken here:
+https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol
+
+[[metoken_example]]
+==== Launching our own ERC20 token
+
+Let's create and launch our own token. For this example, we will use the +truffle+ framework (see <<truffle>>). The example assumes you have already installed +truffle+, configured it, and are familiar with its basic operation.
+
+We will call our token "Mastering Ethereum Token", with symbol "MET".
+
+You can find this example in the book's GitHub repository:
+https://github.com/ethereumbook/ethereumbook/blob/first_edition/code/METoken
+
+First, let's create and initialize a truffle project directory, the same way we did in <<truffle_project_directory>>. Run these four commands and accept the default answers to any questions:
+
+----
+$ mkdir METoken
+$ cd METoken
+METoken $ truffle init
+METoken $ npm init
+----
+
+You should now have the following directory structure:
+
+----
+METoken/
+├── contracts
+│   └── Migrations.sol
+├── migrations
+│   └── 1_initial_migration.js
+├── package.json
+├── test
+├── truffle-config.js
+└── truffle.js
+----
+
+Edit the +truffle.js+ configuration file to setup your +truffle+ environment, or copy the one we used from:
+
+https://github.com/ethereumbook/ethereumbook/blob/first_edition/code/Faucet/truffle.js
+
+If you use the example +truffle.js+, remember to create a file +.env+ in the +METoken+ folder containing your test private keys for testing and deployment on public Ethereum test networks, such as ganache or Kovan. You can export your test network private key from MetaMask.
+
+[WARNING]
+====
+Only use test keys or test mnemonics that are not used to hold funds on the main Ethereum network. Never use keys that hold real money for testing.
+====
+
+For our example, we will import the OpenZeppelin StandardContract, which implements some important security checks and is easy to extend. Let's import that library:
+
+----
+$ npm install zeppelin-solidity
+
++ zeppelin-solidity@1.6.0
+added 8 packages in 2.504s
+----
+
+The +zeppelin-solidity+ package will add about 250 files under the +node_modules+ directory. The OpenZeppelin library includes a lot more than the ERC20 token, but we will only use a small part of it.
+
+Next, let's write our token contract. Create a new file +METoken.sol+ and copy the example code from GitHub:
+
+https://github.com/ethereumbook/ethereumbook/blob/first_edition/code/METoken/contracts/METoken.sol
+
+Our contract is very simple, as it inherits all the functionality from the OpenZeppelin StandardToken library:
+
+[[solidity_token_example]]
+.METoken.sol : A Solidity contract implementing an ERC20 token
+[source,solidity,linenums]
+----
+include::code/METoken/contracts/METoken.sol[]
+----
+
+Here, we are defining the optional variables +name+, +symbol+, and +decimals+. We also define an +_initial_supply+ variable, set to 21 million tokens, and two decimals of subdivision (2.1 billion total). In the contract's initialization (constructor) function we set the +totalSupply+ to be equal to +_initial_supply+ and allocate all of the +_initial_supply+ to the balance of the account (+msg.sender+) that creates the +METoken+ contract.
+
+We now use +truffle+ to compile the +METoken+ code:
+
+----
+$ truffle compile
+Compiling ./contracts/METoken.sol...
+Compiling ./contracts/Migrations.sol...
+Compiling zeppelin-solidity/contracts/math/SafeMath.sol...
+Compiling zeppelin-solidity/contracts/token/ERC20/BasicToken.sol...
+Compiling zeppelin-solidity/contracts/token/ERC20/ERC20.sol...
+Compiling zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol...
+Compiling zeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
+
+----
+
+As you can see, +truffle+ incorporated necessary dependencies from the OpenZeppelin libraries and compiled those contracts too.
+
+Let's set up a migration script, to deploy the +METoken+ contract. Create a new file +2_deploy_contracts.js+ in the +METoken/migrations+ folder. Copy the contents from the example on Github repository:
+
+https://github.com/ethereumbook/ethereumbook/blob/first_edition/code/METoken/migrations/2_deploy_contracts.js
+
+Here's what it contains:
+
+[[metoken_migration]]
+.2_deploy_contracts: Migration to deploy METoken
+[source,javascript,linenums]
+----
+include::code/METoken/migrations/2_deploy_contracts.js[]
+----
+
+Before we deploy on one of the Ethereum test networks, let's start a local blockchain to test everything. Start the +ganache+ blockchain, either from the command-line with +ganache-cli+ or from the graphical user interface, as we did in <<using_ganache>>.
+
+Once +ganache+ is started, we can deploy our METoken contract and see if everything works as expected:
+
+----
+$ truffle migrate --network ganache
+Using network 'ganache'.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xb2e90a056dc6ad8e654683921fc613c796a03b89df6760ec1db1084ea4a084eb
+  Migrations: 0x8cdaf0cd259887258bc13a92c0a6da92698644c0
+Saving successful migration to network...
+  ... 0xd7bc86d31bee32fa3988f1c1eabce403a1b5d570340a3a9cdba53a472ee8c956
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying METoken...
+  ... 0xbe9290d59678b412e60ed6aefedb17364f4ad2977cfb2076b9b8ad415c5dc9f0
+  METoken: 0x345ca3e014aaf5dca488057592ee47305d9b3e10
+Saving successful migration to network...
+  ... 0xf36163615f41ef7ed8f4a8f192149a0bf633fe1a2398ce001bf44c43dc7bdda0
+Saving artifacts...
+
+----
+
+On the +ganache+ console, we should see that our deployment has created 4 new transactions:
+
+[[ganache_metoken]]
+.METoken deployment on Ganache
+image::images/ganache_metoken.png["METoken deployment on Ganache"]
+
+==== Interacting with METoken using the truffle console
+
+We can interact with our contract on the +ganache+ blockchain, using the +truffle console+. This is an interactive JavaScript environment that provides access to the truffle environment and, via Web3, to the blockchain. In this case, we will connect the +truffle console+ to the +ganache+ blockchain:
+
+----
+$ truffle console --network ganache
+truffle(ganache)>
+----
+
+The +truffle(ganache)>+ prompt shows that we are connected to the +ganache+ blockchain and are ready to type our commands. The +truffle console+ supports all the truffle commands, so we could +compile+ and +migrate+ from the console. We've already ran those commands, so let's go directly to the contract itself. The METoken contract exists as a JavaScript object within the truffle environment. Type +METoken+ at the prompt and it will dump the entire contract definition:
+
+----
+truffle(ganache)> METoken
+{ [Function: TruffleContract]
+  _static_methods:
+
+[...]
+
+currentProvider:
+ HttpProvider {
+   host: 'http://localhost:7545',
+   timeout: 0,
+   user: undefined,
+   password: undefined,
+   headers: undefined,
+   send: [Function],
+   sendAsync: [Function],
+   _alreadyWrapped: true },
+network_id: '5777' }
+
+----
+
+The +METoken+ object also exposes several attributes, such as the address of the contract (as deployed by the +migrate+ command):
+
+----
+truffle(ganache)> METoken.address
+'0x345ca3e014aaf5dca488057592ee47305d9b3e10'
+----
+
+If we want to interact with the deployed contract, we have to use an asynchronous call, in the form of a JavaScript "promise". We use the +deployed+ function to get the contract instance and then call the +totalSupply+ function:
+
+----
+truffle(ganache)> METoken.deployed().then(instance => instance.totalSupply())
+BigNumber { s: 1, e: 9, c: [ 2100000000 ] }
+----
+
+Next, let's use the accounts created by +ganache+ to check our METoken balance and send some METoken to another address. First, let's get the account addresses:
+
+----
+truffle(ganache)> let accounts
+undefined
+truffle(ganache)> web3.eth.getAccounts((err,res) => { accounts = res })
+undefined
+truffle(ganache)> accounts[0]
+'0x627306090abab3a6e1400e9345bc60c78a8bef57'
+
+----
+
+The +accounts+ list now contains all the accounts created by +ganache+, and +account[0]+ is the account that deployed the METoken contract. It should have a balance of METoken, because our METoken constructor gives the enitre token supply to the address that created it. Let's check:
+
+----
+truffle(ganache)> METoken.deployed().then(instance => { instance.balanceOf(accounts[0]).then(console.log) })
+undefined
+BigNumber { s: 1, e: 9, c: [ 2100000000 ] }
+----
+
+Finally, let's transfer 1000.00 METoken from +account[0]+ to +account[1]+, by calling the contract's +transfer+ function:
+
+----
+truffle(ganache)> METoken.deployed().then(instance => { instance.transfer(accounts[1], 100000) })
+undefined
+truffle(ganache)> METoken.deployed().then(instance => { instance.balanceOf(accounts[0]).then(console.log) })
+undefined
+truffle(ganache)> BigNumber { s: 1, e: 9, c: [ 2099900000 ] }
+
+undefined
+truffle(ganache)> METoken.deployed().then(instance => { instance.balanceOf(accounts[1]).then(console.log) })
+undefined
+truffle(ganache)> BigNumber { s: 1, e: 5, c: [ 100000 ] }
+
+----
+
+[TIP]
+====
+METoken has 2 decimals of precision, meaning that 1 METoken is 100 units in the contract. When we transfer 1000 METoken, we specify the value as 100,000 in the transfer function.
+====
+
+As you can see, in the console, +account[0]+ now has 20,999,000 MET, and +account[1]+ has 1000 MET.
+
+If you switch to the +ganache+ graphical user interface, you will see the transaction that called the +transfer+ function:
+
+[[ganache_metoken_transfer]]
+.METoken transfer on Ganache
+image::images/ganache_metoken_transfer.png["METoken transfer on Ganache"]
+
+
+==== Sending ERC20 tokens to contract addresses
+
+So far we've setup an ERC20 token and transferred from one account to another. All the accounts we used for these demonstrations are externally-owned accounts (EOAs), meaning they are controlled by a private key, not a contract. What happens if we send MET to a contract address? Let's find out!
+
+First, let's deploy another contract into our test environment. For this example we will use our first contract +Faucet.sol+. Let's add it to the METoken project by copying it to the +contracts+ directory. Our directory should look like this:
+
+----
+METoken/
+├── contracts
+│   ├── Faucet.sol
+│   ├── METoken.sol
+│   └── Migrations.sol
+----
+
+We'll also add a migration, to deploy +Faucet+ separately from +METoken+:
+
+----
+var Faucet = artifacts.require("Faucet");
+
+module.exports = function(deployer) {
+  // Deploy the Faucet contract as our only task
+  deployer.deploy(Faucet);
+};
+----
+
+Let's compile and migrate the contracts, from the truffle console:
+
+----
+$ truffle console --network ganache
+truffle(ganache)> compile
+Compiling ./contracts/Faucet.sol...
+Writing artifacts to ./build/contracts
+
+truffle(ganache)> migrate
+Using network 'ganache'.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0x89f6a7bd2a596829c60a483ec99665c7af71e68c77a417fab503c394fcd7a0c9
+  Migrations: 0xa1ccce36fb823810e729dce293b75f40fb6ea9c9
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Replacing METoken...
+  ... 0x28d0da26f48765f67e133e99dd275fac6a25fdfec6594060fd1a0e09a99b44ba
+  METoken: 0x7d6bf9d5914d37bcba9d46df7107e71c59f3791f
+Saving artifacts...
+Running migration: 3_deploy_faucet.js
+  Deploying Faucet...
+  ... 0x6fbf283bcc97d7c52d92fd91f6ac02d565f5fded483a6a0f824f66edc6fa90c3
+  Faucet: 0xb18a42e9468f7f1342fa3c329ec339f254bc7524
+Saving artifacts...
+----
+
+Great. Now let's send some MET to the +Faucet+ contract:
+
+----
+truffle(ganache)> METoken.deployed().then(instance => { instance.transfer(Faucet.address, 100000) })
+truffle(ganache)> METoken.deployed().then(instance => { instance.balanceOf(Faucet.address).then(console.log)})
+truffle(ganache)> BigNumber { s: 1, e: 5, c: [ 100000 ] }
+----
+
+Alright, we have transferred 1000 MET to the +Faucet+ contract. Now, how do we withdraw from the +Faucet+?
+
+Remember, +Faucet.sol+ is a pretty simple contract. It only has one function, +withdraw+, which is for withdrawing _ether_. It doesn't have a function for withdrawing MET, or any other ERC20 token. If we use +withdraw+ it will try to send ether, but since the faucet doesn't have a balance of ether yet, it will fail.
+The +METoken+ contract knows that +Faucet+ has a balance, but the only way that it can transfer that balance is if it receives a +transfer+ call from the address of the contract. Somehow we need to make the +Faucet+ contract call the +transfer+ function in +METoken+.
+
+If you're wondering what to do next, don't. There is no solution to this problem. The MET sent to +Faucet+ is stuck, forever. Only the +Faucet+ contract can transfer it, and the +Faucet+ contract doesn't have code to call the +transfer+ function of an ERC20 token contract.
+
+Perhaps you anticipated this problem. Most likely, you didn't. In fact, neither did hundreds of Ethereum users who accidentally transferred various tokens to contracts that didn't have any ERC20 capability. According to some estimates, tokens worth more than $2.5 million USD have been "stuck" like this and are lost forever.
+
+One of the ways that users of ERC20 tokens can inadvertently lose their tokens in a transfer, is when they attempt to transfer to an exchange or other service. They copy an Ethereum address from the website of an exchange, thinking they can simply send tokens to it. However, many exchanges publish receiving addresses that are actually contracts! These contracts serve a number of different functions, most often sweeping all funds sent to them to a "cold storage" or other centralized wallet. Despite the many warnings saying "do not send tokens to this address", lots of tokens are lost this way.
+
+==== Demonstrating the approve & transferFrom workflow
+
+Our +Faucet+ contract couldn't handle ERC20 tokens. Sending tokens to it, using the +transfer+ function results in the loss of those tokens. Let's rewrite the contract and make it handle ERC20 tokens. Specifically we will turn it into a faucet that gives out MET to anyone who asks.
+
+For this example, we make a copy of the truffle project directory, call it +METoken_METFaucet+, initialize truffle, npm, install OpenZeppelin dependencies and copy the +METoken.sol+ contract. See our first example <<metoken_example>> for the detailed instructions.
+
+Now, let's create a new faucet contract, call it +METFaucet.sol+. It will look like this:
+
+[[METFaucet]]
+.METFaucet.sol: a faucet for METoken
+[source,solidity,linenums]
+----
+include::code/METoken_METFaucet/contracts/METFaucet.sol
+----
+
+We've made quite a few changes to the basic faucet example. Since METFaucet will use the +transferFrom+ function in +METoken+, it will need two additional variables. One will hold the address of the deployed +METoken+ contract. The other will hold the address of the owner of MET who will provide approval the faucet withdrawals. The +METFaucet+ will call +METoken.transferFrom+ and instruct it to move MET from the owner to the address where the faucet withdrawal request came from.
+
+We declare these two variables here:
+----
+StandardToken public METoken;
+address public METOwner;
+----
+
+Since our faucet needs to be initialized with the correct addesses for +METoken+ and +METOwner+ we need to declare a custom constructor:
+
+----
+// METFaucet constructor, provide the address of METoken contract and
+// the owner address we will be approved to transferFrom
+function METFaucet(address _METoken, address _METOwner) public {
+
+	// Initialize the METoken from the address provided
+	METoken = StandardToken(_METoken);
+	METOwner = _METOwner;
+}
+----
+
+The next change is to the +withdraw+ function. Instead of calling +transfer+, +METFaucet+ uses the +transferFrom+ function in +METoken+ and asks +METoken+ to transfer MET to the faucet recipient:
+
+----
+// Use the transferFrom function of METoken
+METoken.transferFrom(METOwner, msg.sender, withdraw_amount);
+----
+
+Finally, since our faucet no longer sends ether, we should probably prevent anyone from sending ether to +METFaucet+, as we wouldn't want it to get stuck. We change the fallback payable function to reject incoming ether, using the +revert+ function to revert any incoming payments:
+
+----
+// REJECT any incoming ether
+function () public payable { revert(); }
+----
+
+Now that our +METFaucet.sol+ code is ready, we need to modify the migration script to deploy it. This migration script will be a bit more complex, as +METFaucet+ depends on the address of +METoken+. We will use a JavaScript promise to deploy the two contracts in sequence. Create +2_deply_contracts.js+ as follows:
+
+----
+var METoken = artifacts.require("METoken");
+var METFaucet = artifacts.require("METFaucet");
+var owner = web3.eth.accounts[0];
+
+module.exports = function(deployer) {
+
+	// Deploy the METoken contract first
+	deployer.deploy(METoken, {from: owner}).then(function() {
+		// then deploy METFaucet and pass the addres of METoken
+		// and the address of the owner of all the MET who will approve METFaucet
+		return deployer.deploy(METFaucet, METoken.address, owner);
+  	});
+}
+----
+
+Now, we can test everything in the truffle console. First, we use +migrate+ to deploy the contracts. When +METoken+ is deployed it will allocate all the MET to the account that created it, +web3.eth.accounts[0]+. Then, we call the +approve+ function in METoken to approve +METFaucet+ to send up to 1000 MET on behalf of +web3.eth.accounts[0]+. Finally, to test our faucet, we call +METFaucet.withdraw+ from +web3.eth.accounts[1]+ and try to withdraw 10 MET. Here are the console commands:
+
+
+----
+$ truffle console --network ganache
+truffle(ganache)> migrate
+Using network 'ganache'.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0x79352b43e18cc46b023a779e9a0d16b30f127bfa40266c02f9871d63c26542c7
+  Migrations: 0xaa588d3737b611bafd7bd713445b314bd453a5c8
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Replacing METoken...
+  ... 0xc42a57f22cddf95f6f8c19d794c8af3b2491f568b38b96fef15b13b6e8bfff21
+  METoken: 0xf204a4ef082f5c04bb89f7d5e6568b796096735a
+  Replacing METFaucet...
+  ... 0xd9615cae2fa4f1e8a377de87f86162832cf4d31098779e6e00df1ae7f1b7f864
+  METFaucet: 0x75c35c980c0d37ef46df04d31a140b65503c0eed
+Saving artifacts...
+truffle(ganache)> METoken.deployed().then(instance => { instance.approve(METFaucet.address, 100000) })
+truffle(ganache)> METoken.deployed().then(instance => { instance.balanceOf(web3.eth.accounts[1]).then(console.log) })
+truffle(ganache)> BigNumber { s: 1, e: 0, c: [ 0 ] }
+truffle(ganache)> METFaucet.deployed().then(instance => { instance.withdraw(1000, {from:web3.eth.accounts[1]}) } )
+truffle(ganache)> METoken.deployed().then(instance => { instance.balanceOf(web3.eth.accounts[1]).then(console.log) })
+truffle(ganache)> BigNumber { s: 1, e: 3, c: [ 1000 ] }
+----
+
+As you can see from the results, we can use the +approve+ and +transferFrom+ workflow to authorize one contract to transfer tokens defined in another token. If properly used, ERC20 tokens can be used by externally-owned addresses and other contracts.
+
+However, the burden of managing ERC20 tokens correctly is pushed to the user interface. If a user incorrectly attempts to transfer ERC20 tokens to a contract address and that contract is not equipped to receive ERC20 tokens, the tokens will be lost.
+
+==== Issues with ERC20 tokens
+
+The adoption of the ERC20 token standard has been truly explosive. Thousands of tokens have been launched, both to experiment with new capabilities and to raise funds in various "crowdfund" auctions and Initial Coin Offerings (ICOs). However there are some potential pitfalls, as we saw with the issue of transferring tokens to contract addresses.
+
+One of the less obvious issues with ERC20 tokens is that they expose subtle differences between tokens and ether itself. Where ether is transfered by a transaction which has a recipient address as its destination, token transfers occur within the _specific token contract state_ and have the token contract as their destination, not the recipient's address. The token contract tracks balances, and issues events. In a token transfer, no transaction is actually sent to the recipient of the token. Instead, the recipients address is added to a map within the token contract itself. A transaction sending ether to an address, changes the state of an address. A transaction transferring a token to an address, only changes the state of the token contract, not the state of the recipient address. Even a wallet that has support for ERC20 tokens does not become aware of a token balance, unless the user explicitly adds a specific token contract to "watch". Some wallets watch the most popular token contracts to detect balances held by addresses they control, but that's limited to a small fraction of the available ERC20 contracts.
+
+In fact, it's unlikely that a user would _want_ to track all balances in all possible ERC20 token contracts. Many ERC20 tokens are more like email spam than usable tokens. They automatically create balances for accounts that have ether activity, to attract users. If you have an Ethereum address with a long history of activity, especially if it was created in the presale, you will find it full of "junk" tokens that appeared out of nowhere. Of course, the address isn't really full of tokens, it's the token contracts that have your address in them. You only see these balances if these tokens contracts are being watched by the block explorer or wallet you use to view your address.
+
+Tokens don't behave the same way as ether. Ether is sent with the +send+ function and accepted by any payable function in a contract or any externally owned address. Tokens are sent using +transfer+ or +approve & transferFrom+ functions that exist only in the ERC20 contract, and do not (at least in ERC20) trigger any payable functions in a recipient contract. Tokens are meant to function just like a cryptocurrency such as ether, but they come with certain subtle distinctions that break that illusion.
+
+Consider another issue. To send ether, or use any Ethereum contract you need ether to pay gas. To send tokens, you _also need ether_. You cannot pay for a transaction's gas with a token and the token contract can't pay the gas for you. This can cause some rather strange user experiences. For example, let's say you use an exchange or Shapeshift to convert some bitcoin to a token. You "receive" the token in a wallet that tracks that token's contract and shows your balance. It looks the same as any of the other cryptocurrencies you have in your wallet. Now try sending the token and your wallet will inform you that you need ether to do that. You might be confused - after all you didn't need ether to receive the token. Perhaps you have no ether. Perhaps you didn't even know the token was an ERC20 token on Ethereum, maybe you thought it was a cryptocurrency with its own blockchain. The illusion just broke.
+
+Some of these issues are specific to ERC20 tokens. Others are more general issues that relate to abstraction and interface boundaries within Ethereum. Some can be solved by changing the token interface, others may need changes to fundamental structures within Ethereum (such as the distinction between EOAs and contracts, and between transactions and messages). Some may not be "solvable" exactly and may require user interface design to hide the nuances and make the user experience consistent regardless of the underlying distinctions.
+
+In the next sections we will look at various proposals that attempt to address some of these issues.
+
+==== ERC223
+
+The ERC223 proposal attempts to solve the problem of inadvertent transfer of tokens to a contract (that may or may not support tokens) by detecting whether the destination address is a contract or not. ERC223 requires that contracts designed to accept tokens implement a function named +tokenFallback+. If the destination of a transfer is a contract and the contract does not have support for tokens (i.e. does not implement +tokenFallback+), the transfer fails.
+
+To detect whether the destination address is a contract, the ERC223 reference implementation uses a small segment of inline bytecode, in a rather creative way:
+
+----
+function isContract(address _addr) private view returns (bool is_contract) {
+	uint length;
+	assembly {
+		  //retrieve the size of the code on target address, this needs assembly
+		  length := extcodesize(_addr)
+	}
+	return (length>0);
+}
+----
+
+You can see the discussion around the ERC223 proposal here:
+
+https://github.com/ethereum/EIPs/issues/223
+
+ERC223 is not widely implemented and there is some debate in that discussion thread about backwards compatibility and trade-offs between implementing changes at the contract interface level versus the user interface. The debate continues.
+
+==== ERC777
+
+https://github.com/ethereum/EIPs/issues/777
+
+==== ERC721
+
+https://github.com/ethereum/EIPs/issues/721
+
+ERC721 is a standard for non-fungible tokens. For example, CryptoKitty is a ERC721 token. Each unit of the token represents a virtual cat with a unique set of characteristics.
+
+https://www.reddit.com/r/ethereum/comments/7qjw6x/everything_you_need_to_know_about_erc777_the_new/
+
+=== Tokens and ICOs
