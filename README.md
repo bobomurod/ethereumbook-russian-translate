@@ -19,7 +19,7 @@ Note: the order or structure of these snippets is in constant flux.
 Here's what is available now:
 
 | Секция | Прогрес | Перевод |
-|-------|------|
+|-------|------|------|
 | [Preface](preface_ru.asciidoc) | ### | [x] |
 | [Глосарий](glossary_ru.asciidoc) | ### | [x] |
 | [Что такое Ethereum](what-is_ru.asciidoc) | ## | [x] |
